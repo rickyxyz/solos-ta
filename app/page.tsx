@@ -19,7 +19,7 @@ async function HomePage({
       <header className='flex w-full'>
         <PositionFilter />
       </header>
-      <div className='grid w-full grid-flow-row grid-cols-responsive-3 gap-x-4 gap-y-5'>
+      <div className='grid w-full grid-flow-row gap-x-4 gap-y-5 md:grid-cols-responsive-3'>
         {playerData.map((player, index) => (
           <CardPlayer
             key={`player_card-${index}-${player.username}`}
