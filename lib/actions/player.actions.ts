@@ -20,3 +20,29 @@ export async function fetchPlayers(
 
   return filteredData;
 }
+
+/**
+ * Fetch a player data
+ *
+ * @remarks
+ * This function will throw an error when given an empty string
+ *
+ */
+export async function fetchPlayer(
+  username: string
+): Promise<Player | undefined> {
+  if (!username) {
+    throw new Error('fetchPlayer was called without argument');
+  }
+
+  const res = await fs.readFile(
+    process.cwd() + '/constants/mocks/source.json',
+    'utf-8'
+  );
+
+  const data = JSON.parse(res) as Player[];
+
+  const filteredData = data.find((datum) => datum.username === username);
+
+  return filteredData;
+}
