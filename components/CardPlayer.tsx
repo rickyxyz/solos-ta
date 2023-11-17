@@ -33,17 +33,19 @@ function CardPlayer({ player, mode = 'singular' }: CardPlayerProps) {
             {player.position}
           </h4>
         </header>
-        <div className='grid grid-cols-[1.5fr,2fr] gap-x-2 gap-y-1'>
+        <div className='flex flex-col gap-x-2 gap-y-1'>
           {data.map((datum) => (
-            <>
-              {' '}
+            <div
+              key={`card-${player.username}-${datum}`}
+              className='grid grid-cols-2 gap-2'
+            >
               <span className='relative capitalize after:absolute after:right-0 after:content-[":"]'>
                 {datum === 'phoneNumber' ? 'phone' : datum}
               </span>
               <span className={`${datum !== 'email' && 'capitalize'}`}>
                 {player[datum] || '-'}
               </span>
-            </>
+            </div>
           ))}
         </div>
       </div>
