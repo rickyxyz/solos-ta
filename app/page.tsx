@@ -2,6 +2,7 @@ import PositionFilter from '@/components/PositionFilter';
 import CardPlayer from '@/components/CardPlayer';
 import { fetchPlayers } from '@/lib/actions/player.actions';
 import { PlayerFilter, playerFilter } from '@/types/player';
+import Link from 'next/link';
 
 async function HomePage({
   searchParams,
@@ -21,11 +22,13 @@ async function HomePage({
       </header>
       <div className='grid w-full grid-flow-row gap-x-4 gap-y-5 md:grid-cols-responsive-3'>
         {playerData.map((player, index) => (
-          <CardPlayer
+          <Link
             key={`player_card-${index}-${player.username}`}
-            player={player}
-            mode='list'
-          />
+            href={`/player/${player.username}`}
+            className='cursor-pointer'
+          >
+            <CardPlayer player={player} mode='list' />
+          </Link>
         ))}
       </div>
     </main>

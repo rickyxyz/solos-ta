@@ -12,15 +12,17 @@ function CardPlayer({ player, mode = 'singular' }: CardPlayerProps) {
   return (
     <article
       className={
-        'flex w-full cursor-pointer select-none flex-col gap-5 rounded-xl bg-white p-5 drop-shadow-md ' +
-        (mode === 'singular' ? 'max-h-min ' : 'md:h-56 md:flex-row md:pr-11 ')
+        'flex w-full select-none flex-col gap-5 rounded-xl bg-white p-5 drop-shadow-md ' +
+        (mode === 'singular'
+          ? 'max-h-min max-w-[90vw] xl:max-w-md'
+          : 'md:h-56 md:flex-row md:pr-11 ')
       }
     >
       <Image
         src={player.avatar}
         alt="player's photo"
-        width={300}
-        height={300}
+        width={500}
+        height={500}
         priority
         className='aspect-square h-full w-auto rounded-md object-cover object-top'
       />

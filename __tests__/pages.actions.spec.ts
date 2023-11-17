@@ -22,9 +22,19 @@ test('Filter in home page change query params', async ({ page }) => {
 test('Filter in home page change the number of cards', async ({ page }) => {
   await page.goto('http://localhost:3000/');
 
-  await expect(page.getByRole('article')).toHaveCount(11);
+  await expect(page.getByRole('link')).toHaveCount(11);
 
   await page.getByLabel('filter by position').selectOption('goalkeeper');
 
-  await expect(page.getByRole('article')).toHaveCount(1);
+  await expect(page.getByRole('link')).toHaveCount(1);
+});
+
+test('Clicking on player card will redirect to player page', async ({
+  page,
+}) => {
+  await page.goto('http://localhost:3000/');
+
+  await page.getByRole('link').first().click();
+
+  await expect(page).toHaveURL(/^http:\/\/localhost:3000\/player\/.+/);
 });
