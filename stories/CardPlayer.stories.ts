@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import CardPlayer from '../components/CardPlayer';
+import CardPlayer from '@/components/CardPlayer';
 import { Player } from '@/types/player';
 
 const meta = {
