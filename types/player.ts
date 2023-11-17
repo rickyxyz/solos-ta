@@ -6,7 +6,7 @@ const playerPosition = [
 ] as const;
 type PlayerPosition = (typeof playerPosition)[number];
 
-export const playerFilter = ['all', ...playerPosition] as const;
+export const playerFilter = ['all position', ...playerPosition] as const;
 export type PlayerFilter = (typeof playerFilter)[number];
 
 export interface Player {

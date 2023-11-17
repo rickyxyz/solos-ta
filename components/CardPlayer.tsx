@@ -12,15 +12,16 @@ function CardPlayer({ player, mode = 'singular' }: CardPlayerProps) {
   return (
     <article
       className={
-        'flex w-full cursor-pointer select-none flex-col gap-5 rounded-xl bg-neutral-100 p-5 drop-shadow-md' +
+        'flex w-full cursor-pointer select-none flex-col gap-5 rounded-xl bg-white p-5 drop-shadow-md' +
         (mode === 'singular' ? `max-h-min ` : ` md:h-56 md:flex-row md:pr-11`)
       }
     >
       <Image
         src={player.avatar}
         alt="player's photo"
-        width={0}
-        height={0}
+        width={300}
+        height={300}
+        priority
         className='aspect-square h-full w-auto rounded-md object-cover object-top'
       />
       <div className='flex flex-col gap-4'>

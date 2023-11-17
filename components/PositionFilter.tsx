@@ -4,23 +4,30 @@ import { PlayerFilter, playerFilter } from '@/types/player';
 import { ChangeEvent, useState } from 'react';
 
 function PositionFilter() {
-  const [filter, setFilter] = useState<PlayerFilter>('all');
+  const [filter, setFilter] = useState<PlayerFilter>('all position');
 
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     setFilter(event.target.value as PlayerFilter);
   }
 
   return (
-    <div>
+    <div className='flex items-center gap-1 rounded-full bg-white px-4 py-1 text-lg font-semibold drop-shadow-md'>
+      <label htmlFor='filter' className='hidden'>
+        position
+      </label>
       <select
         id='filter'
         name='filter'
         value={filter}
         onChange={onChange}
-        className='min-w-28 block w-full rounded-lg bg-gray-50 p-2 text-sm drop-shadow-md'
+        className='block w-36 rounded-lg bg-white py-1 capitalize'
       >
         {playerFilter.map((filterOption) => (
-          <option key={`filter-${filterOption}`} value={filterOption}>
+          <option
+            key={`filter-${filterOption}`}
+            value={filterOption}
+            className='capitalize'
+          >
             {filterOption}
           </option>
         ))}
