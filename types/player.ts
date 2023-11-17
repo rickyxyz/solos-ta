@@ -1,3 +1,14 @@
+const playerPosition = [
+  'defender',
+  'forward',
+  'goalkeeper',
+  'midfielder',
+] as const;
+type PlayerPosition = (typeof playerPosition)[number];
+
+export const playerFilter = ['all', ...playerPosition] as const;
+export type PlayerFilter = (typeof playerFilter)[number];
+
 export interface Player {
   firstName: string;
   lastName: string;
@@ -6,6 +17,6 @@ export interface Player {
   username: string;
   city: string;
   country: string;
-  position: 'goalkeeper' | 'defender' | 'midfielder' | 'forward';
+  position: PlayerPosition;
   avatar: string;
 }
