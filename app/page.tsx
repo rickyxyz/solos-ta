@@ -1,9 +1,18 @@
 import PositionFilter from '@/components/PositionFilter';
 import CardPlayer from '@/components/CardPlayer';
 import { fetchPlayers } from '@/lib/actions/player.actions';
+import { PlayerFilter, playerFilter } from '@/types/player';
 
-async function HomePage() {
-  const playerData = await fetchPlayers();
+async function HomePage({
+  searchParams,
+}: {
+  searchParams: { filter: string };
+}) {
+  const filter = playerFilter.includes(searchParams.filter as PlayerFilter)
+    ? (searchParams.filter as PlayerFilter)
+    : 'all position';
+
+  const playerData = await fetchPlayers(filter);
 
   return (
     <main className='flex min-h-screen flex-col items-start gap-6 px-8 py-4'>
