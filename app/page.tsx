@@ -9,8 +9,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 function HomePage() {
   const [playerData, setPlayerData] = useState<Player[]>([]);
-  const filterState = useState<PlayerFilter>('all position');
-  const [filter] = filterState;
+  const [filter, setFilter] = useState<PlayerFilter>('all position');
 
   const filteredPlayer = useMemo(() => {
     if (filter === 'all position') return playerData;
@@ -31,7 +30,7 @@ function HomePage() {
 
   return (
     <main className='flex min-h-screen flex-col items-start gap-6 px-8 py-4'>
-      <PositionFilter filterState={filterState} />
+      <PositionFilter filter={filter} setFilter={setFilter} />
       <section className='grid w-full grid-flow-row gap-x-4 gap-y-5 md:grid-cols-responsive-3 '>
         {filteredPlayer.map((player, index) => (
           <Link

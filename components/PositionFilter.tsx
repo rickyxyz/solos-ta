@@ -1,15 +1,14 @@
 'use client';
 
 import { PlayerFilter, playerFilter } from '@/types/player';
-import { ChangeEvent, SetStateAction } from 'react';
+import { ChangeEvent } from 'react';
 
 interface PositionFilterProps {
-  filterState: [PlayerFilter, React.Dispatch<SetStateAction<PlayerFilter>>];
+  filter: PlayerFilter;
+  setFilter: (filter: PlayerFilter) => void;
 }
 
-function PositionFilter({ filterState }: PositionFilterProps) {
-  const [filter, setFilter] = filterState;
-
+function PositionFilter({ filter, setFilter }: PositionFilterProps) {
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     setFilter(event.target.value as PlayerFilter);
   }

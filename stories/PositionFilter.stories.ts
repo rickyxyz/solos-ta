@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import PositionFilter from '@/components/PositionFilter';
+import { PlayerFilter } from '@/types/player';
 
 const meta = {
   title: 'Component/Dropdown Filter',
@@ -30,4 +31,10 @@ type Story = StoryObj<typeof meta>;
 
 export const PositionFilterDefault: Story = {
   name: 'Position Filter',
+  args: {
+    filter: 'all position',
+    setFilter: (e: PlayerFilter) => {
+      console.log(e);
+    },
+  },
 };
