@@ -4,7 +4,7 @@ import { Player, PlayerFilter } from '@/types/player';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const pathName = path.join(process.cwd(), 'constants', 'mocks', 'source.json');
+const pathName = path.join(process.cwd(), 'public', 'source.json');
 
 export async function fetchPlayers(
   filter: PlayerFilter = 'all position'
