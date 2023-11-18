@@ -14,6 +14,14 @@ The tech stack used ([Note\*](##Notes)):
 - Playwright (for behavior testing)
 - Lefthook (for pre-commit)
 
+## Accessing The Live Version
+
+The live version of this repository can be accessed at
+[solos-ta.vercel.app](https://solos-ta.vercel.app/)
+
+The Storybook static site of this repository can be accessed at
+[rickyxyz.github.io/solos-ta](https://rickyxyz.github.io/solos-ta/)
+
 ## Working With The Application Locally
 
 Running the application
