@@ -93,4 +93,4 @@ sequenceDiagram
 
 - This repository was generated from an incomplete version of [my NextJs Boilerplate](https://github.com/rickyxyz/nextjs-boilerplate). Since the boilerplate has not been field tested yet, please keep in mind:
   - **Incomplete Configurations**: Some configurations are still in progress.
-  - **Testing Framework**: The testing framework has not been extensively tested yet.
+  - **Testing Framework**: The testing framework is still experimental and not been tested yet.
