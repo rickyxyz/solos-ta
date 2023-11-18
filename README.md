@@ -82,7 +82,7 @@ The app folder uses NextJS folder routing system.
 
 ## How It Works
 
-Since NextJs 13 (and up), the main rendering strategy has changed from CSR to SSR. The filter position system now works according to the diagram below.
+NextJS now defaults pages and components to SSR.
 
 ```mermaid
 sequenceDiagram
