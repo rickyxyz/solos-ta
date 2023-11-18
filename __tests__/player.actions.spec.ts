@@ -13,14 +13,15 @@ test('fetchPlayers without filter can return multiple players', async () => {
   expect(json.length).toBe(11);
 });
 
-test('fetchPlayers with filter can return mulitple players', async () => {
-  const json = await fetchPlayers('defender');
+test('fetchPlayers with filter can return filtered player', async () => {
+  const json = await fetchPlayers('goalkeeper');
 
-  expect(json.length).toBe(4);
+  expect(json.length).toBe(1);
 });
+
 test('fetchPlayer will throw error when called when called with an empty string', async () => {
   await expect(fetchPlayer('')).rejects.toThrow(
-    'fetchPlayer was called without argument'
+    'fetchPlayer was called with an empty string'
   );
 });
 

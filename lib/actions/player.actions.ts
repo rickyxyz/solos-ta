@@ -32,7 +32,7 @@ export async function fetchPlayer(
   username: string
 ): Promise<Player | undefined> {
   if (!username) {
-    throw new Error('fetchPlayer was called without argument');
+    throw new Error('fetchPlayer was called with an empty string');
   }
 
   const res = await fs.readFile(
