@@ -2,11 +2,14 @@
 
 import { Player, PlayerFilter } from '@/types/player';
 import { promises as fs } from 'fs';
+import path from 'path';
+
+const pathName = path.join(process.cwd(), 'public', 'source.json');
 
 export async function fetchPlayers(
   filter: PlayerFilter = 'all position'
 ): Promise<Player[]> {
-  const res = await fs.readFile('public/source.json', 'utf-8');
+  const res = await fs.readFile(pathName, 'utf-8');
 
   const data = JSON.parse(res) as Player[];
 
@@ -32,7 +35,7 @@ export async function fetchPlayer(
     throw new Error('fetchPlayer was called with an empty string');
   }
 
-  const res = await fs.readFile('public/source.json', 'utf-8');
+  const res = await fs.readFile(pathName, 'utf-8');
 
   const data = JSON.parse(res) as Player[];
 
