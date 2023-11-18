@@ -82,7 +82,7 @@ The app folder uses NextJS folder routing system.
 
 ## How It Works
 
-NextJS now defaults pages and components to SSR.
+NextJS now defaults to SSR, so the filter by position is implemented like the following.
 
 ```mermaid
 sequenceDiagram
