@@ -72,7 +72,7 @@ root/
 ├── constants/
 │   └── mocks/      # Store mock data for development and testing
 ├── lib/            # Non component functions
-│   └── actions/    # NextJs action files
+│   └── actions/    # NextJs action files, the fetching from JSON file happens here
 ├── __test__/       # Playwright tests
 ├── stories/        # Storybook stories
 ├── public/         # NextJs assets

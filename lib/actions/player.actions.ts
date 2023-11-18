@@ -18,6 +18,7 @@ export async function fetchPlayers(
       ? data
       : data.filter((datum) => datum.position === filter);
 
+  // In real scenario, this would be data from some DB or API
   return filteredData;
 }
 
@@ -41,5 +42,6 @@ export async function fetchPlayer(
 
   const filteredData = data.find((datum) => datum.username === username);
 
+  // In real scenario, this would be data from some DB or API
   return filteredData;
 }
