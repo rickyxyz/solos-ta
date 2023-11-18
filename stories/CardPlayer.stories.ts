@@ -23,7 +23,7 @@ const playerData: Player = {
   city: 'Gladsaxe',
   country: 'Denmark',
   position: 'goalkeeper',
-  avatar: '/peter.webp',
+  avatar: './peter.webp',
 };
 
 export const ListCard: Story = {
