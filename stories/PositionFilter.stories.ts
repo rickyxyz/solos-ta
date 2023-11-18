@@ -4,6 +4,9 @@ import PositionFilter from '@/components/PositionFilter';
 const meta = {
   title: 'Component/Dropdown Filter',
   parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
     layout: 'centered',
     backgrounds: {
       default: 'gray',
