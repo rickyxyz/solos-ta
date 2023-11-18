@@ -24,6 +24,8 @@ The Storybook static site of this repository can be accessed at
 
 [rickyxyz.github.io/solos-ta](https://rickyxyz.github.io/solos-ta/)
 
+The storybook static deployment uses Github Actions to deploy to Github Pages
+
 ## Working With The Application Locally
 
 Running the application
@@ -78,7 +80,7 @@ root/
 └── .github/        # Github workflows
 ```
 
-The app folder uses NextJS folder routing system.
+I did not to nest the `components`, `constants`, and `lib` folders inside the `app` folder, because I find it easier to navigate the codebase with this structure.
 
 ## How It Works
 
