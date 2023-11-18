@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import CardPlayer from '@/components/CardPlayer';
 import { Player } from '@/types/player';
 
-console.log(process.env);
-
 const meta = {
   title: 'Component/Player Card',
   component: CardPlayer,
@@ -25,7 +23,7 @@ const playerData: Player = {
   city: 'Gladsaxe',
   country: 'Denmark',
   position: 'goalkeeper',
-  avatar: `${process.env.SB_BASE_PATH ?? ''}/peter.webp`,
+  avatar: '/peter.webp',
 };
 
 export const ListCard: Story = {
