@@ -1,23 +1,22 @@
 'use client';
 
 import { PlayerFilter, playerFilter } from '@/types/player';
-import { useRouter, useSearchParams } from 'next/navigation';
-
+import { useRouter } from 'next/navigation';
 import { ChangeEvent } from 'react';
 
-function PositionFilter() {
+interface PositionFilterProps {
+  filter?: PlayerFilter;
+}
+
+function PositionFilter({ filter = 'all position' }: PositionFilterProps) {
   const router = useRouter();
-  const params = useSearchParams();
-  const filter = playerFilter.includes(params.get('filter') as PlayerFilter)
-    ? (params.get('filter') as PlayerFilter)
-    : 'all position';
 
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     router.replace(`/?filter=${event.target.value}`);
   }
 
   return (
-    <div className='flex items-center gap-1 rounded-full bg-white px-4 py-1 text-lg font-semibold drop-shadow-md'>
+    <form className='flex items-center gap-1 rounded-full bg-white px-4 py-1 text-lg font-semibold drop-shadow-md'>
       <label htmlFor='filter' className='hidden'>
         filter by position
       </label>
@@ -38,7 +37,7 @@ function PositionFilter() {
           </option>
         ))}
       </select>
-    </div>
+    </form>
   );
 }
 
