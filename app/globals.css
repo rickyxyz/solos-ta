@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .add-colon-right {
+    @apply relative capitalize after:absolute after:right-0 after:content-[":"];
+  }
+}
