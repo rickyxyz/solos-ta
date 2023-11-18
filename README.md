@@ -3,7 +3,7 @@
 ## Overview
 
 This repository has been created to as part of the technical assessment process for Solos.
-The tech stack used ([Note\*](##Notes)):
+The tech stack used:
 
 - NextJs 14
 - TypeScript
@@ -17,9 +17,11 @@ The tech stack used ([Note\*](##Notes)):
 ## Accessing The Live Version
 
 The live version of this repository can be accessed at
+
 [solos-ta.vercel.app](https://solos-ta.vercel.app/)
 
 The Storybook static site of this repository can be accessed at
+
 [rickyxyz.github.io/solos-ta](https://rickyxyz.github.io/solos-ta/)
 
 ## Working With The Application Locally
