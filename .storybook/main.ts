@@ -19,7 +19,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: ['../public', '../stories/assets'],
+  staticDirs: ['../stories/assets'],
   webpackFinal: async (config) => {
     if (config.resolve?.alias) {
       config.resolve.alias['@'] = [path.resolve(__dirname, '../')];
