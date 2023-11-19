@@ -1,11 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import PositionFilter from '@/components/PositionFilter';
+import { action } from '@storybook/addon-actions';
 
 const meta = {
   title: 'Component/Dropdown Filter',
   parameters: {
     nextjs: {
       appDirectory: true,
+    },
+    argTypes: {
+      setFilter: { action: 'setFilter' },
     },
     layout: 'centered',
     backgrounds: {
@@ -32,8 +36,6 @@ export const PositionFilterDefault: Story = {
   name: 'Position Filter',
   args: {
     filter: 'all position',
-    setFilter: () => {
-      return;
-    },
+    setFilter: action('setFilter'),
   },
 };
