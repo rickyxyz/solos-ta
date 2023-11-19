@@ -27,7 +27,7 @@ function CardPlayer({ player, mode = 'singular' }: CardPlayerProps) {
         width={500}
         height={500}
         priority
-        className='aspect-square h-full w-auto rounded-md object-cover object-top'
+        className='aspect-square h-full max-h-[50vh] w-auto rounded-md object-cover object-top 2xl:max-h-[80vh]'
       />
       <div className='flex w-full flex-col gap-4'>
         <header>
