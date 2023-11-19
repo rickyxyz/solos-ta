@@ -1,18 +1,19 @@
 'use client';
 
 import { PlayerFilter, playerFilter } from '@/types/player';
-import { useRouter } from 'next/navigation';
 import { ChangeEvent } from 'react';
 
 interface PositionFilterProps {
-  filter?: PlayerFilter;
+  filter: PlayerFilter;
+  setFilter: (filter: PlayerFilter) => void;
 }
 
-function PositionFilter({ filter = 'all position' }: PositionFilterProps) {
-  const router = useRouter();
-
+function PositionFilter({
+  filter = 'all position',
+  setFilter,
+}: PositionFilterProps) {
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
-    router.replace(`/?filter=${event.target.value}`);
+    setFilter(event.target.value as PlayerFilter);
   }
 
   return (

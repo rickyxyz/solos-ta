@@ -30,4 +30,10 @@ type Story = StoryObj<typeof meta>;
 
 export const PositionFilterDefault: Story = {
   name: 'Position Filter',
+  args: {
+    filter: 'all position',
+    setFilter: () => {
+      return;
+    },
+  },
 };

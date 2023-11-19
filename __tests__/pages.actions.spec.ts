@@ -7,16 +7,6 @@ test('Home page can render', async ({ page }) => {
   expect(page.locator('h1')).toBeTruthy();
 });
 
-// filter page by changing the query paremeters
-// delete this test, if the filter method changes
-test('Filter in home page change query params', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
-
-  await page.getByLabel('filter by position').selectOption('forward');
-
-  await expect(page).toHaveURL('http://localhost:3000/?filter=forward');
-});
-
 // the homepage only display 11 players (and only 1 goalkeeper per team)
 // delete/change this test, if the homepage needs to display a variable number of players
 test('Filter in home page change the number of cards', async ({ page }) => {

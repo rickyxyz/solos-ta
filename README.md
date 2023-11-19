@@ -84,7 +84,7 @@ I did not to nest the `components`, `constants`, and `lib` folders inside the `a
 
 ## How It Works
 
-NextJS now defaults to SSR, so the filter by position is implemented like the following.
+With Next.js server side component, the API call to DB is made by the server instead of the client
 
 ```mermaid
 sequenceDiagram
@@ -94,11 +94,6 @@ sequenceDiagram
   Server->>+Server: Render Page
   Server-->>-Client: Send Rendered Page
   Client->>+Client: Filter position
-  Client->>+Server: Request Route for "/?filter=goalkeeper"
-  Server->>+DB: fetchPlayer(filter)
-  DB-->>-Server: Data
-  Server->>+Server: Render Page
-  Server-->>-Client: Send Filtered Page
 ```
 
 ## Notes
